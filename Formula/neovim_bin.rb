@@ -5,6 +5,8 @@ class NeovimBin < Formula
   version "0.5.1"
   sha256 "d736845b8b63e443970ea93636dfbde3e2673a70d2058c057e41b836ac4f6f6c"
 
+  conflicts_with "neovim", because: "neovim also ships a nvim binary"
+
   def install
     chmod 0755, "bin/nvim"
 
