@@ -6,6 +6,6 @@
 
 Or `brew tap lowski/homebrew` and then `brew install <formula>`.
 
-## Documentation
+## Available Formulas
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+* `neovim_bin` - just a binary without any dependencies
