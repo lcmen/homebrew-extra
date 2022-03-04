@@ -2,8 +2,8 @@ class NeovimBin < Formula
   desc "Binary based formula for installing Neovim on MacOS."
   homepage "https://neovim.io"
   url "https://github.com/neovim/neovim/releases/download/stable/nvim-macos.tar.gz"
-  version "0.5.1"
-  sha256 "d736845b8b63e443970ea93636dfbde3e2673a70d2058c057e41b836ac4f6f6c"
+  version "0.6.1"
+  sha256 "3546be6a13f45411731dc4c93b0932f7d6197b4318ea082cafe7b28d843248f9"
 
   conflicts_with "neovim", because: "neovim also ships a nvim binary"
 
