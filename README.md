@@ -1,6 +1,6 @@
-# Lowski Homebrew
+# My Homebrew's formulas
 
-## How do I install these formulae?
+## How do I install these formulas?
 
 `brew install lcmen/homebrew/<formula>`
 
