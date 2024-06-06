@@ -1,6 +1,6 @@
-# My Homebrew's formulas
+# My Homebrew's formulas and casks
 
-## How do I install these formulas?
+## How do I install these?
 
 `brew install lcmen/homebrew-extra/<formula>`
 
@@ -12,4 +12,4 @@ Or `brew tap lcmen/extra` and then `brew install <formula>`.
 
 ## Available Casks
 
-* `SaneSideButtons` - fork of the abandoned `SensibleSideButtons` that makes back / forward mouse buttons work on Safari
+* `neardrop` - An unofficial Google Nearby Share app for macOS
