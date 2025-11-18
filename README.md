@@ -9,7 +9,3 @@ Or `brew tap lcmen/extra` and then `brew install <formula>`.
 ## Available Formulas
 
 * `neovim_bin` - NeoVim binary without any dependencies
-
-## Available Casks
-
-* `neardrop` - An unofficial Google Nearby Share app for macOS
