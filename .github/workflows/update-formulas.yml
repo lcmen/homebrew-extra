@@ -12,6 +12,7 @@ jobs:
       matrix:
         formula:
           - Formula/neovim_bin.rb
+          - Formula/go_pty.rb
       fail-fast: false
     steps:
       - name: Checkout repository
@@ -19,6 +20,8 @@ jobs:
 
       - name: Update formula
         id: update
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           .github/scripts/update-formula.sh "${{ matrix.formula }}"
 

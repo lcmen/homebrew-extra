@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 FORMULA_PATH="$1"
@@ -8,17 +9,14 @@ if [ -z "$FORMULA_PATH" ]; then
   exit 1
 fi
 
-# Extract current version and GitHub repo from first URL
 CURRENT_VERSION=$(grep 'version' "$FORMULA_PATH" | head -1 | sed 's/.*"\(.*\)".*/\1/')
-FIRST_URL=$(grep 'url ' "$FORMULA_PATH" | head -1 | sed 's/.*"\(.*\)".*/\1/')
-GITHUB_REPO=$(echo "$FIRST_URL" | sed -n 's|.*github.com/\([^/]*/[^/]*\)/.*|\1|p')
+URL=$(grep 'url ' "$FORMULA_PATH" | head -1 | sed 's/.*"\(.*\)".*/\1/')
+GITHUB_REPO=$(echo "$URL" | sed -n 's|.*github.com/\([^/]*/[^/]*\)/.*|\1|p')
+API_RESPONSE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPO/releases/latest")
+LATEST_VERSION=$(echo "$API_RESPONSE" | jq -r '.tag_name' | sed 's/^v//')
 
 echo "GitHub repo: $GITHUB_REPO"
 echo "Current version: $CURRENT_VERSION"
-
-# Get latest version
-API_RESPONSE=$(curl -s "https://api.github.com/repos/$GITHUB_REPO/releases/latest")
-LATEST_VERSION=$(echo "$API_RESPONSE" | jq -r '.tag_name' | sed 's/^v//')
 echo "Latest version: $LATEST_VERSION"
 
 if [ -z "$LATEST_VERSION" ] || [ "$LATEST_VERSION" = "null" ]; then

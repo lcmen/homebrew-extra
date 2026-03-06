@@ -8,4 +8,5 @@ Or `brew tap lcmen/extra` and then `brew install <formula>`.
 
 ## Available Formulas
 
-* `neovim_bin` - NeoVim binary without any dependencies
+* `neovim_bin` - Neovim binary without any dependencies
+* `go_pty` - Terminal multiplexer for Go applications
