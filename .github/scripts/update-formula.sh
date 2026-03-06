@@ -17,8 +17,15 @@ echo "GitHub repo: $GITHUB_REPO"
 echo "Current version: $CURRENT_VERSION"
 
 # Get latest version
-LATEST_VERSION=$(curl -s "https://api.github.com/repos/$GITHUB_REPO/releases/latest" | jq -r '.tag_name' | sed 's/^v//')
+API_RESPONSE=$(curl -s "https://api.github.com/repos/$GITHUB_REPO/releases/latest")
+echo "API Response: $API_RESPONSE"
+LATEST_VERSION=$(echo "$API_RESPONSE" | jq -r '.tag_name' | sed 's/^v//')
 echo "Latest version: $LATEST_VERSION"
+
+if [ -z "$LATEST_VERSION" ] || [ "$LATEST_VERSION" = "null" ]; then
+  echo "Error: Failed to fetch latest version"
+  exit 1
+fi
 
 if [ "$LATEST_VERSION" = "$CURRENT_VERSION" ]; then
   echo "Already up to date"
@@ -27,6 +34,7 @@ if [ "$LATEST_VERSION" = "$CURRENT_VERSION" ]; then
 else
   echo "needs_update=true" >> "$GITHUB_OUTPUT"
   echo "version=$LATEST_VERSION" >> "$GITHUB_OUTPUT"
+  echo "github_repo=$GITHUB_REPO" >> "$GITHUB_OUTPUT"
 fi
 
 # Update version everywhere (in version field and URLs)
