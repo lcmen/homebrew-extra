@@ -12,7 +12,7 @@ jobs:
       matrix:
         formula:
           - Formula/neovim_bin.rb
-          - Formula/go_pty.rb
+          - Formula/go-pty.rb
       fail-fast: false
     steps:
       - name: Checkout repository
