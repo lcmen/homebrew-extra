@@ -1,16 +1,16 @@
 class GoPty < Formula
   desc "Terminal multiplexer for Go applications"
   homepage "https://github.com/lcmen/go-pty"
-  version "0.1.1"
+  version "0.2.0"
 
   on_arm do
-    url "https://github.com/lcmen/go-pty/releases/download/v0.1.1/go-pty-darwin-arm64"
-    sha256 "38abe1e60425ebb2bf8d433ae9f7d0fab13c809638a44885cb382590683c1c39"
+    url "https://github.com/lcmen/go-pty/releases/download/v0.2.0/go-pty-darwin-arm64"
+    sha256 "ffdd61f93998e907eea554a9660eb40c7f87a2ad8e43ee0842ad98da4e975e36"
   end
 
   on_intel do
-    url "https://github.com/lcmen/go-pty/releases/download/v0.1.1/go-pty-darwin-amd64"
-    sha256 "2d49e6d2f296cc22910c8dda52536a93ff7dad3ff816896386cb8fc7c11a4144"
+    url "https://github.com/lcmen/go-pty/releases/download/v0.2.0/go-pty-darwin-amd64"
+    sha256 "853f7fe71c001ef9a53f73e0406f29779f5d1f8eb0f2f3eee6f8f1f5d10f18d6"
   end
 
   def install
