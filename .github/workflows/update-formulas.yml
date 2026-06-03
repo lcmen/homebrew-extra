@@ -17,6 +17,7 @@ jobs:
         formula:
           - Formula/compartment.rb
           - Formula/go-pty.rb
+          - Formula/libvips-lite.rb
           - Formula/neovim_bin.rb
       fail-fast: false
     steps:
