@@ -18,7 +18,7 @@ jobs:
           - Formula/compartment.rb
           - Formula/go-pty.rb
           - Formula/libvips-lite.rb
-          - Formula/neovim_bin.rb
+          - Formula/neovim-bin.rb
       fail-fast: false
     steps:
       - name: Checkout repository

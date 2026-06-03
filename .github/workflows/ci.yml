@@ -26,4 +26,4 @@ jobs:
           lcmen/extra/compartment
           lcmen/extra/go-pty
           lcmen/extra/libvips-lite
-          lcmen/extra/neovim_bin
+          lcmen/extra/neovim-bin
