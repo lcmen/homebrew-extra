@@ -1,7 +1,6 @@
 class LibvipsLite < Formula
   desc "Image processing library, stripped down for Rails image variants"
   homepage "https://github.com/libvips/libvips"
-  version "8.18.2"
   url "https://github.com/libvips/libvips/releases/download/v8.18.2/vips-8.18.2.tar.xz"
   sha256 "a30d4aede16f1c2899c1a2241870f8a7409feafa38484bcdcdac113d6d6f8ff5"
 
