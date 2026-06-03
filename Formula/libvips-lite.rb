@@ -75,6 +75,7 @@ class LibvipsLite < Formula
       -Draw=disabled
       -Drsvg=disabled
       -Dspng=disabled
+      -Dtiff=disabled
       -Duhdr=disabled
 
       -Dnsgif=true

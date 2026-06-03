@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Tap repository
+        run: brew tap lcmen/extra "$GITHUB_WORKSPACE"
+
+      - name: Audit formulas
+        run: >
+          brew audit --formula --strict
+          lcmen/extra/compartment
+          lcmen/extra/go-pty
+          lcmen/extra/libvips-lite
+          lcmen/extra/neovim_bin
