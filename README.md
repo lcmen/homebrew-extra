@@ -11,4 +11,4 @@ Or `brew tap lcmen/extra` and then `brew install <formula>`.
 * `compartment` - Docker-based CLI tool for managing local development services
 * `go-pty` - Terminal multiplexer for Go applications
 * `libvips-lite` - Image processing library, stripped down for Rails image variants
-* `neovim_bin` - Neovim binary without any dependencies
+* `neovim-bin` - Neovim binary without any dependencies
