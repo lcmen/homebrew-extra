@@ -3,13 +3,14 @@
 set -e
 
 FORMULA_PATH="$1"
+FORMULA_REF="$2"
 
-if [ -z "$FORMULA_PATH" ]; then
-  echo "Usage: $0 <formula_path>"
+if [ -z "$FORMULA_PATH" ] || [ -z "$FORMULA_REF" ]; then
+  echo "Usage: $0 <formula_path> <formula_ref>"
   exit 1
 fi
 
-CURRENT_VERSION=$(grep 'version' "$FORMULA_PATH" | head -1 | sed 's/.*"\(.*\)".*/\1/')
+CURRENT_VERSION=$(brew info --json=v1 "$FORMULA_REF" | jq -r '.[0].versions.stable')
 URL=$(grep 'url ' "$FORMULA_PATH" | head -1 | sed 's/.*"\(.*\)".*/\1/')
 GITHUB_REPO=$(echo "$URL" | sed -n 's|.*github.com/\([^/]*/[^/]*\)/.*|\1|p')
 API_RESPONSE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPO/releases/latest")

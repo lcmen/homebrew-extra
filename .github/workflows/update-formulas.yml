@@ -14,28 +14,35 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        formula:
-          - Formula/compartment.rb
-          - Formula/go-pty.rb
-          - Formula/libvips-lite.rb
-          - Formula/neovim-bin.rb
+        include:
+          - formula_path: Formula/compartment.rb
+            formula_ref: lcmen/extra/compartment
+          - formula_path: Formula/go-pty.rb
+            formula_ref: lcmen/extra/go-pty
+          - formula_path: Formula/libvips-lite.rb
+            formula_ref: lcmen/extra/libvips-lite
+          - formula_path: Formula/neovim-bin.rb
+            formula_ref: lcmen/extra/neovim-bin
       fail-fast: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Tap repository
+        run: brew tap lcmen/extra "$GITHUB_WORKSPACE"
 
       - name: Update formula
         id: update
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          .github/scripts/update-formula.sh "${{ matrix.formula }}"
+          .github/scripts/update-formula.sh "${{ matrix.formula_path }}" "${{ matrix.formula_ref }}"
 
       - name: Check for existing PR
         if: steps.update.outputs.needs_update == 'true'
         id: check_pr
         run: |
-          BRANCH="update-${{ matrix.formula }}-${{ steps.update.outputs.version }}"
+          BRANCH="update-${{ matrix.formula_path }}-${{ steps.update.outputs.version }}"
           if gh pr list --head "$BRANCH" --state open --json number | jq -e '. | length > 0' > /dev/null; then
             echo "PR already exists for this version"
             echo "skip_pr=true" >> "$GITHUB_OUTPUT"
@@ -50,14 +57,14 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: |
-            Update ${{ matrix.formula }} to v${{ steps.update.outputs.version }}
+            Update ${{ matrix.formula_path }} to v${{ steps.update.outputs.version }}
 
             Co-Authored-By: GitHub Actions <noreply@github.com>
-          branch: update-${{ matrix.formula }}-${{ steps.update.outputs.version }}
+          branch: update-${{ matrix.formula_path }}-${{ steps.update.outputs.version }}
           delete-branch: true
-          title: "Update ${{ matrix.formula }} to v${{ steps.update.outputs.version }}"
+          title: "Update ${{ matrix.formula_path }} to v${{ steps.update.outputs.version }}"
           body: |
-            Update ${{ matrix.formula }} to v${{ steps.update.outputs.version }}
+            Update ${{ matrix.formula_path }} to v${{ steps.update.outputs.version }}
 
             See https://github.com/${{ steps.update.outputs.github_repo }}/releases/tag/v${{ steps.update.outputs.version }}
 
