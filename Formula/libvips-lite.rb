@@ -27,7 +27,7 @@ class LibvipsLite < Formula
   def install
     # mozjpeg needs to appear before libjpeg, otherwise libvips may pick up
     # Apple's/system libjpeg or another libjpeg-compatible provider.
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("mozjpeg")/"pkgconfig"
 
     args = %w[
       -Ddeprecated=true
