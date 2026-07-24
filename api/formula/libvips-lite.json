@@ -1,0 +1,104 @@
+{
+  "aliases": [],
+  "autobump": true,
+  "bottle": {},
+  "build_dependencies": [
+    "gettext",
+    "meson",
+    "ninja",
+    "pkgconf"
+  ],
+  "caveats": null,
+  "compatibility_version": null,
+  "conflicts_with": [
+    "vips"
+  ],
+  "conflicts_with_reasons": [
+    "both install vips binaries, libvips, and vips pkg-config files"
+  ],
+  "dependencies": [
+    "cgif",
+    "glib",
+    "libexif",
+    "libnsgif",
+    "libpng",
+    "little-cms2",
+    "mozjpeg",
+    "webp"
+  ],
+  "deprecate_args": null,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "deprecation_replacement_cask": null,
+  "deprecation_replacement_formula": null,
+  "desc": "Image processing library, stripped down for Rails image variants",
+  "disable_args": null,
+  "disable_date": null,
+  "disable_reason": null,
+  "disable_replacement_cask": null,
+  "disable_replacement_formula": null,
+  "disabled": false,
+  "full_name": "lcmen/extra/libvips-lite",
+  "homepage": "https://github.com/libvips/libvips",
+  "installed": [],
+  "keg_only": false,
+  "keg_only_reason": null,
+  "license": null,
+  "link_overwrite": [],
+  "linked_keg": null,
+  "name": "libvips-lite",
+  "no_autobump_message": null,
+  "oldnames": [],
+  "optional_dependencies": [],
+  "options": [],
+  "outdated": false,
+  "patches": [],
+  "pinned": false,
+  "post_install_defined": false,
+  "post_install_steps": [],
+  "pour_bottle_only_if": null,
+  "recommended_dependencies": [],
+  "requirements": [],
+  "revision": 0,
+  "ruby_source_checksum": {
+    "sha256": "3f53eda9ef70f5ed62de69a495d77dc6ed044cd8221937ade1ee47549b1294e4"
+  },
+  "ruby_source_path": "Formula/libvips-lite.rb",
+  "service": null,
+  "skip_livecheck": false,
+  "tap": "lcmen/extra",
+  "tap_git_head": "6452efe850c26b398127e5fed8628754c86404a2",
+  "test_dependencies": [
+    "pkgconf"
+  ],
+  "urls": {
+    "stable": {
+      "checksum": "2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037",
+      "revision": null,
+      "tag": null,
+      "url": "https://github.com/libvips/libvips/releases/download/v8.18.4/vips-8.18.4.tar.xz",
+      "using": null
+    }
+  },
+  "uses_from_macos": [
+    {
+      "python": "build"
+    },
+    "expat",
+    "zlib"
+  ],
+  "uses_from_macos_bounds": [
+    {},
+    {},
+    {}
+  ],
+  "variations": {},
+  "version_scheme": 0,
+  "versioned_formulae": [],
+  "versions": {
+    "bottle": false,
+    "head": null,
+    "stable": "8.18.4"
+  }
+}
