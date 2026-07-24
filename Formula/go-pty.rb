@@ -12,7 +12,14 @@ class GoPty < Formula
   end
 
   def install
-    bin.install File.basename(stable.url) => "go-pty"
+    asset_name = if Hardware::CPU.arm?
+      "go-pty-darwin-arm64"
+    else
+      "go-pty-darwin-amd64"
+    end
+
+    chmod 0755, asset_name
+    bin.install asset_name => "go-pty"
   end
 
   test do

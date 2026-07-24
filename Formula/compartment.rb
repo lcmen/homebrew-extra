@@ -12,7 +12,14 @@ class Compartment < Formula
   end
 
   def install
-    bin.install File.basename(stable.url) => "compartment"
+    asset_name = if Hardware::CPU.arm?
+      "compartment-darwin-arm64"
+    else
+      "compartment-darwin-amd64"
+    end
+
+    chmod 0755, asset_name
+    bin.install asset_name => "compartment"
   end
 
   test do
