@@ -62,13 +62,13 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "3f53eda9ef70f5ed62de69a495d77dc6ed044cd8221937ade1ee47549b1294e4"
+    "sha256": "1b1ed590f54d37bb0d1c2b6811e80e7449e28131bdaaa97580e85c724954d561"
   },
   "ruby_source_path": "Formula/libvips-lite.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "6452efe850c26b398127e5fed8628754c86404a2",
+  "tap_git_head": "adc04d89aa327956f914053ab846625fa31d9043",
   "test_dependencies": [
     "pkgconf"
   ],
