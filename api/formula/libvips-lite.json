@@ -24,7 +24,8 @@
     "libpng",
     "little-cms2",
     "mozjpeg",
-    "webp"
+    "webp",
+    "gettext"
   ],
   "deprecate_args": null,
   "deprecated": false,
@@ -62,13 +63,13 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "1b1ed590f54d37bb0d1c2b6811e80e7449e28131bdaaa97580e85c724954d561"
+    "sha256": "4ee272eeec000b5c92ff3a4aca744821e778bb16ce7ebc7c912eee980d696e76"
   },
   "ruby_source_path": "Formula/libvips-lite.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "adc04d89aa327956f914053ab846625fa31d9043",
+  "tap_git_head": "0aadf152c2ef2630de7560638cd6e59242c8856f",
   "test_dependencies": [
     "pkgconf"
   ],
@@ -93,7 +94,32 @@
     {},
     {}
   ],
-  "variations": {},
+  "variations": {
+    "arm64_linux": {
+      "dependencies": [
+        "cgif",
+        "glib",
+        "libexif",
+        "libnsgif",
+        "libpng",
+        "little-cms2",
+        "mozjpeg",
+        "webp"
+      ]
+    },
+    "x86_64_linux": {
+      "dependencies": [
+        "cgif",
+        "glib",
+        "libexif",
+        "libnsgif",
+        "libpng",
+        "little-cms2",
+        "mozjpeg",
+        "webp"
+      ]
+    }
+  },
   "version_scheme": 0,
   "versioned_formulae": [],
   "versions": {
