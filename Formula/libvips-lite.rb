@@ -6,9 +6,9 @@ class LibvipsLite < Formula
 
   bottle do
     root_url "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.4"
-    rebuild 1
-    sha256 arm64_sequoia: "0d1de9d931ad8f8fc0dd12a3990157fa02a03d807882006472a1d6bfc65891a3"
-    sha256 sequoia:       "d0c8512f82c7492462472bf85cb100f68d40b8653af405ca509fbe20dd18fc3f"
+    rebuild 2
+    sha256 arm64_sequoia: "967da54622030deec43bc559724ccc6cdf08506c4d97c754d18e439839771312"
+    sha256 sequoia:       "c8f2c36f04a5bb5c189912f25187d790e446a4881b0bad20e61d96ed975764ff"
   end
 
   depends_on "gettext" => :build
