@@ -13,7 +13,7 @@ readonly formula_name="$1"
 readonly bottle_root_url="$2"
 readonly formula_ref="${TAP}/${formula_name}"
 
-brew trust --formula "$formula_ref"
+brew trust --tap "$TAP"
 brew install --build-bottle "$formula_ref"
 brew test "$formula_ref"
 brew linkage --test "$formula_ref"
