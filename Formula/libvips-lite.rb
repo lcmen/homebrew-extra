@@ -4,6 +4,13 @@ class LibvipsLite < Formula
   url "https://github.com/libvips/libvips/releases/download/v8.18.4/vips-8.18.4.tar.xz"
   sha256 "2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037"
 
+  bottle do
+    root_url "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.4"
+    rebuild 1
+    sha256 arm64_sequoia: "0d1de9d931ad8f8fc0dd12a3990157fa02a03d807882006472a1d6bfc65891a3"
+    sha256 sequoia:       "d0c8512f82c7492462472bf85cb100f68d40b8653af405ca509fbe20dd18fc3f"
+  end
+
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -29,14 +36,8 @@ class LibvipsLite < Formula
   conflicts_with "vips", because: "both install vips binaries, libvips, and vips pkg-config files"
 
   def install
-    # Add build deps to path so it works with mise bootstrap
-    %w[gettext meson ninja pkgconf].each do |dep|
-      ENV.prepend_path "PATH", Formula[dep].opt_bin
-    end
-
-    # mozjpeg needs to appear before libjpeg, otherwise libvips may pick up system libjpeg or another compatible provider.
-    mozjpeg = Formula["mozjpeg"]
-    ENV.prepend_path "PKG_CONFIG_PATH", mozjpeg.opt_lib/"pkgconfig"
+    # mozjpeg needs to appear before libjpeg to prevent libvips from picking system libjpeg library
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("mozjpeg")/"pkgconfig"
 
     args = %w[
       -Ddeprecated=true
