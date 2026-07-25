@@ -1,11 +1,11 @@
-name: Bottles
+name: Create Bottles
 
 on:
   pull_request:
     paths:
       - Formula/*.rb
       - .github/scripts/create-bottle.sh
-      - .github/workflows/bottles.yml
+      - .github/workflows/create-bottles.yml
   workflow_dispatch:
     inputs:
       publish:
@@ -66,28 +66,23 @@ jobs:
           )"
           echo "root_url=https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ matrix.package }}-${pkg_version}" >> "$GITHUB_OUTPUT"
 
-      - name: Create and test bottle
-        run: >
-          .github/scripts/create-bottle.sh
-          "${{ matrix.package }}"
-          "${{ steps.bottle.outputs.root_url }}"
+      - name: Create bottle
+        run: .github/scripts/create-bottle.sh "${{ matrix.package }}" "${{ steps.bottle.outputs.root_url }}"
 
       - name: Upload bottle artifacts
         uses: actions/upload-artifact@v4
         with:
           name: bottle-${{ matrix.package }}-${{ matrix.target.arch }}
           path: |
-            ${{ matrix.package }}--*.bottle.tar.gz
-            ${{ matrix.package }}-*.bottle.json
+            ${{ matrix.package }}--*.bottle*.tar.gz
+            ${{ matrix.package }}--*.bottle.json
           if-no-files-found: error
           retention-days: 14
 
   publish:
     name: Publish bottles
     if: >-
-      github.event_name == 'workflow_dispatch' &&
-      inputs.publish &&
-      github.ref == 'refs/heads/main'
+      github.event_name == 'workflow_dispatch' && inputs.publish && github.ref == 'refs/heads/main'
     needs: bottle
     runs-on: macos-15
     permissions:
@@ -109,7 +104,9 @@ jobs:
           path: ${{ runner.temp }}/bottles
 
       - name: Tap repository
-        run: brew tap lcmen/extra "$GITHUB_WORKSPACE"
+        run: |
+          brew tap lcmen/extra "$GITHUB_WORKSPACE"
+          brew trust --tap lcmen/extra
 
       - name: Publish bottles and update formulas
         env:

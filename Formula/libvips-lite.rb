@@ -29,7 +29,7 @@ class LibvipsLite < Formula
   conflicts_with "vips", because: "both install vips binaries, libvips, and vips pkg-config files"
 
   def install
-    # mozjpeg needs to appear before libjpeg, otherwise libvips may pick up system libjpeg or another compatible provider.
+    # mozjpeg needs to appear before libjpeg to prevent libvips from picking system libjpeg library
     ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("mozjpeg")/"pkgconfig"
 
     args = %w[
