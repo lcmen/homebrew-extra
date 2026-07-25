@@ -22,12 +22,19 @@ class LibvipsLite < Formula
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   conflicts_with "vips", because: "both install vips binaries, libvips, and vips pkg-config files"
 
   def install
-    # mozjpeg needs to appear before libjpeg, otherwise libvips may pick up
-    # Apple's/system libjpeg or another libjpeg-compatible provider.
-    # formula_opt_lib is unavailable in mise's source-build shim.
+    # Add build deps to path so it works with mise bootstrap
+    %w[gettext meson ninja pkgconf].each do |dep|
+      ENV.prepend_path "PATH", Formula[dep].opt_bin
+    end
+
+    # mozjpeg needs to appear before libjpeg, otherwise libvips may pick up system libjpeg or another compatible provider.
     mozjpeg = Formula["mozjpeg"]
     ENV.prepend_path "PKG_CONFIG_PATH", mozjpeg.opt_lib/"pkgconfig"
 
