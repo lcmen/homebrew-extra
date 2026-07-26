@@ -2,15 +2,15 @@
 
 ## How do I install these?
 
+### Homebrew
+
 `brew install lcmen/extra/<formula>`
 
 Or `brew tap lcmen/extra` and then `brew install <formula>`.
 
-## mise bootstrap
+## mise
 
-[mise](https://mise.jdx.dev/) 2026.6.6 or newer can provision these
-formulas directly, without invoking Homebrew. This is supported on Apple
-Silicon macOS.
+[mise](https://mise.jdx.dev/) 2026.6.6 or newer can provision these formulas directly, without invoking Homebrew.
 
 Use the fully qualified formula names in your mise configuration:
 
@@ -28,12 +28,9 @@ Then apply them with:
 mise bootstrap packages apply
 ```
 
-Because `lcmen/extra` is a conventionally named GitHub tap, no
-`[bootstrap.brew.taps]` entry is needed.
-
 ## Available Formulas
 
 - [compartment](https://www.mendelowski.com/compartment/) - Docker-based CLI tool for managing local development services
 - [go-pty](https://www.mendelowski.com/go-pty/) - Terminal multiplexer for Go applications
-- `libvips-lite` - Image processing library, stripped down for Rails image variants
+- [libvips-lite](https://github.com/lcmen/homebrew-extra/releases?q=libvips-lite&expanded=true) - Image processing library, stripped down for Rails image variants
 - `neovim-bin` - Neovim binary without any dependencies
