@@ -1,12 +1,12 @@
 class LibvipsLite < Formula
   desc "Image processing library, stripped down for Rails image variants"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.18.4/vips-8.18.4.tar.xz"
-  sha256 "2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037"
+  url "https://github.com/libvips/libvips/releases/download/v8.18.5/vips-8.18.5.tar.xz"
+  sha256 "8c4e6332d818249ed05ce98e36e6ed8a08e3249ac70f69680842ab2e5fee8510"
 
   bottle do
-    root_url "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.4"
-    rebuild 2
+    root_url "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.5"
+0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5
     sha256 arm64_sequoia: "967da54622030deec43bc559724ccc6cdf08506c4d97c754d18e439839771312"
     sha256 sequoia:       "c8f2c36f04a5bb5c189912f25187d790e446a4881b0bad20e61d96ed975764ff"
   end
