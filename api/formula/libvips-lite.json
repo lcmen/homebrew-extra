@@ -1,24 +1,7 @@
 {
   "aliases": [],
   "autobump": true,
-  "bottle": {
-    "stable": {
-      "files": {
-        "arm64_sequoia": {
-          "cellar": "/opt/homebrew/Cellar",
-          "sha256": "967da54622030deec43bc559724ccc6cdf08506c4d97c754d18e439839771312",
-          "url": "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.4/libvips-lite-8.18.4.arm64_sequoia.bottle.2.tar.gz"
-        },
-        "sequoia": {
-          "cellar": "/usr/local/Cellar",
-          "sha256": "c8f2c36f04a5bb5c189912f25187d790e446a4881b0bad20e61d96ed975764ff",
-          "url": "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.4/libvips-lite-8.18.4.sequoia.bottle.2.tar.gz"
-        }
-      },
-      "rebuild": 2,
-      "root_url": "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.4"
-    }
-  },
+  "bottle": {},
   "build_dependencies": [
     "gettext",
     "meson",
@@ -80,22 +63,22 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "27cd4da57cf791eb24d17127bd4d5c94b96e7807a20a0ab49416b82e7c6b0106"
+    "sha256": "8fc32fc7983c9b7e9227d1c30c43fa8a3f951029dc1bb77c6da826ce690e3cd2"
   },
   "ruby_source_path": "Formula/libvips-lite.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "c28e746f8e46e4621aa6d105647a3197795f95ed",
+  "tap_git_head": "fb70c4ecd62ce966a9ec58730736e7a664616b2c",
   "test_dependencies": [
     "pkgconf"
   ],
   "urls": {
     "stable": {
-      "checksum": "2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037",
+      "checksum": "8c4e6332d818249ed05ce98e36e6ed8a08e3249ac70f69680842ab2e5fee8510",
       "revision": null,
       "tag": null,
-      "url": "https://github.com/libvips/libvips/releases/download/v8.18.4/vips-8.18.4.tar.xz",
+      "url": "https://github.com/libvips/libvips/releases/download/v8.18.5/vips-8.18.5.tar.xz",
       "using": null
     }
   },
@@ -140,8 +123,8 @@
   "version_scheme": 0,
   "versioned_formulae": [],
   "versions": {
-    "bottle": true,
+    "bottle": false,
     "head": null,
-    "stable": "8.18.4"
+    "stable": "8.18.5"
   }
 }
