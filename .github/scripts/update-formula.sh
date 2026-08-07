@@ -35,14 +35,32 @@ else
   echo "github_repo=$GITHUB_REPO" >> "$GITHUB_OUTPUT"
 fi
 
+# Remove the bottle block as it has not been geenrated yet.
+# `brew pr-upload` will re-add correct block once bottles are published from main.
+TEMP_FORMULA=$(mktemp)
+awk '
+  !in_block && /^[[:space:]]*bottle do[[:space:]]*$/ {
+    in_block = 1
+    match($0, /^[[:space:]]*/)
+    indent = substr($0, 1, RLENGTH)
+    next
+  }
+  in_block && $0 == indent "end" { in_block = 0; drop_blank = 1; next }
+  in_block { next }
+  drop_blank && /^[[:space:]]*$/ { drop_blank = 0; next }
+  { drop_blank = 0; print }
+' "$FORMULA_PATH" > "$TEMP_FORMULA"
+cat "$TEMP_FORMULA" > "$FORMULA_PATH"
+rm "$TEMP_FORMULA"
+
 # Update version everywhere (in version field and URLs)
 sed -i '' "s/$CURRENT_VERSION/$LATEST_VERSION/g" "$FORMULA_PATH"
 
 # Download each URL and update its SHA
-for url in $(grep 'url ' "$FORMULA_PATH" | sed 's/.*"\(.*\)".*/\1/'); do
+for url in $(grep -E '^[[:space:]]*url ' "$FORMULA_PATH" | sed 's/.*"\(.*\)".*/\1/'); do
   echo "Downloading: $url"
   TEMP_FILE=$(mktemp)
-  curl -sL -o "$TEMP_FILE" "$url"
+  curl -sL --fail -o "$TEMP_FILE" "$url"
   SHA=$(shasum -a 256 "$TEMP_FILE" | awk '{print $1}')
   rm "$TEMP_FILE"
   echo "SHA256: $SHA"
@@ -51,5 +69,8 @@ for url in $(grep 'url ' "$FORMULA_PATH" | sed 's/.*"\(.*\)".*/\1/'); do
   OLD_SHA=$(grep -A1 "$url" "$FORMULA_PATH" | tail -1 | sed 's/.*"\(.*\)".*/\1/')
   sed -i '' "s/$OLD_SHA/$SHA/" "$FORMULA_PATH"
 done
+
+# Check Ruby syntax
+ruby -c "$FORMULA_PATH" > /dev/null
 
 echo "Updated successfully"

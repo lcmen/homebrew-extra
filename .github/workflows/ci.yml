@@ -21,9 +21,4 @@ jobs:
         run: brew tap lcmen/extra "$GITHUB_WORKSPACE"
 
       - name: Audit formulas
-        run: >
-          brew audit --formula --strict
-          lcmen/extra/compartment
-          lcmen/extra/go-pty
-          lcmen/extra/libvips-lite
-          lcmen/extra/neovim-bin
+        run: .github/scripts/audit-formulas.sh
