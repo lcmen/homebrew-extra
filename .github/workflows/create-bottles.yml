@@ -66,7 +66,17 @@ jobs:
           )"
           echo "root_url=https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ matrix.package }}-${pkg_version}" >> "$GITHUB_OUTPUT"
 
+      - name: Cache bottle
+        id: bottle-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ matrix.package }}--*.bottle*.tar.gz
+            ${{ matrix.package }}--*.bottle.json
+          key: bottle-v1-${{ matrix.target.runner }}-${{ matrix.package }}-${{ hashFiles(format('Formula/{0}.rb', matrix.package), '.github/scripts/create-bottle.sh') }}
+
       - name: Create bottle
+        if: steps.bottle-cache.outputs.cache-hit != 'true'
         run: .github/scripts/create-bottle.sh "${{ matrix.package }}" "${{ steps.bottle.outputs.root_url }}"
 
       - name: Upload bottle artifacts
