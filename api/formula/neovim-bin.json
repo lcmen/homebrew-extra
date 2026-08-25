@@ -48,20 +48,20 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "daaf28643121b1067811418beac586de80c935a28d342970a019d87dda8994ad"
+    "sha256": "c78fa9c0d0e54527ecc665f19e96ec9df75d2b5ad91b624c6fee84de75177bac"
   },
   "ruby_source_path": "Formula/neovim-bin.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "95e3f44df6574853c57217f711991b2b70e30f6e",
+  "tap_git_head": "e1da6296524ce2d3c414ed7306db9d588d2c2b17",
   "test_dependencies": [],
   "urls": {
     "stable": {
-      "checksum": "51ab83afa66d663627c2ab1be43209b0f4e81360d4598b53efaa4d8195f24c89",
+      "checksum": "65fb000099e47ca1b762584c484cc833f40e30851a0ec450d4174e16317c1f9b",
       "revision": null,
       "tag": null,
-      "url": "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-arm64.tar.gz",
+      "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-macos-arm64.tar.gz",
       "using": null
     }
   },
@@ -73,6 +73,6 @@
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "0.12.4"
+    "stable": "0.12.5"
   }
 }
