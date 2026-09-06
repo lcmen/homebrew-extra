@@ -1,8 +1,6 @@
 class GoPty < Formula
   desc "Terminal multiplexer for Go applications"
   homepage "https://github.com/lcmen/go-pty"
-  version "0.3.1"
-
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-darwin-arm64"

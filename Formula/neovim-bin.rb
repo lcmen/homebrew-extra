@@ -1,8 +1,6 @@
 class NeovimBin < Formula
   desc "Prebuilt Neovim binary"
   homepage "https://neovim.io"
-  version "0.12.5"
-
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-macos-arm64.tar.gz"
