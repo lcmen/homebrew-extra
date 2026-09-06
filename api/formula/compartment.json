@@ -44,13 +44,13 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "a1412c433a4405565f027ff6d3d0fc92397bf283884fb13b715c2beeec9bdf64"
+    "sha256": "c3d2762626b7f9a527774baa3eb740e2d28a367876ac8218e449a0b2828c1431"
   },
   "ruby_source_path": "Formula/compartment.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "adc04d89aa327956f914053ab846625fa31d9043",
+  "tap_git_head": "2e94a9470d8f7cfc98a6208706a373dffe380463",
   "test_dependencies": [],
   "urls": {
     "stable": {
@@ -69,6 +69,6 @@
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "0.2.0"
+    "stable": "64"
   }
 }

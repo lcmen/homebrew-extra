@@ -18,7 +18,7 @@
   "deprecation_reason": null,
   "deprecation_replacement_cask": null,
   "deprecation_replacement_formula": null,
-  "desc": "Prebuilt Neovim binary for macOS",
+  "desc": "Prebuilt Neovim binary",
   "disable_args": null,
   "disable_date": null,
   "disable_reason": null,
@@ -48,13 +48,13 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "c78fa9c0d0e54527ecc665f19e96ec9df75d2b5ad91b624c6fee84de75177bac"
+    "sha256": "0b30846ad7d5020f9fbecd17357013a9c736e330e0d6c9a09d08f151f6cb2fab"
   },
   "ruby_source_path": "Formula/neovim-bin.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "e1da6296524ce2d3c414ed7306db9d588d2c2b17",
+  "tap_git_head": "2e94a9470d8f7cfc98a6208706a373dffe380463",
   "test_dependencies": [],
   "urls": {
     "stable": {
@@ -67,12 +67,35 @@
   },
   "uses_from_macos": [],
   "uses_from_macos_bounds": [],
-  "variations": {},
+  "variations": {
+    "arm64_linux": {
+      "urls": {
+        "stable": {
+          "checksum": "1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725",
+          "revision": null,
+          "tag": null,
+          "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-arm64.tar.gz",
+          "using": null
+        }
+      }
+    },
+    "x86_64_linux": {
+      "urls": {
+        "stable": {
+          "checksum": "1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725",
+          "revision": null,
+          "tag": null,
+          "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-arm64.tar.gz",
+          "using": null
+        }
+      }
+    }
+  },
   "version_scheme": 0,
   "versioned_formulae": [],
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "0.12.5"
+    "stable": "64"
   }
 }

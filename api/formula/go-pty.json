@@ -44,13 +44,13 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "1ae3c018a7812592f4d60fafa4edb08df03fefee1609386d9913043c1b48a7a1"
+    "sha256": "557d420004b2977daef37f255ffdff68353f8be8fa127261f8a7ae9185c397f4"
   },
   "ruby_source_path": "Formula/go-pty.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "adc04d89aa327956f914053ab846625fa31d9043",
+  "tap_git_head": "2e94a9470d8f7cfc98a6208706a373dffe380463",
   "test_dependencies": [],
   "urls": {
     "stable": {
@@ -63,12 +63,35 @@
   },
   "uses_from_macos": [],
   "uses_from_macos_bounds": [],
-  "variations": {},
+  "variations": {
+    "arm64_linux": {
+      "urls": {
+        "stable": {
+          "checksum": "8a8d4d4470ab1b105e103055a7189f366a5806cfac4b1cf08a35b6e5ce37fe7e",
+          "revision": null,
+          "tag": null,
+          "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-linux-arm64",
+          "using": null
+        }
+      }
+    },
+    "x86_64_linux": {
+      "urls": {
+        "stable": {
+          "checksum": "8a8d4d4470ab1b105e103055a7189f366a5806cfac4b1cf08a35b6e5ce37fe7e",
+          "revision": null,
+          "tag": null,
+          "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-linux-arm64",
+          "using": null
+        }
+      }
+    }
+  },
   "version_scheme": 0,
   "versioned_formulae": [],
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "0.3.1"
+    "stable": "64"
   }
 }
