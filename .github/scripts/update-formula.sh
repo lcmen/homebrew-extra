@@ -10,9 +10,20 @@ if [ -z "$FORMULA_PATH" ] || [ -z "$FORMULA_REF" ]; then
   exit 1
 fi
 
-CURRENT_VERSION=$(brew info --json=v1 "$FORMULA_REF" | jq -r '.[0].versions.stable')
 URL=$(grep 'url ' "$FORMULA_PATH" | head -1 | sed 's/.*"\(.*\)".*/\1/')
+CURRENT_VERSION=$(echo "$URL" | sed -n 's|.*/releases/download/v\([^/]*\)/.*|\1|p')
 GITHUB_REPO=$(echo "$URL" | sed -n 's|.*github.com/\([^/]*/[^/]*\)/.*|\1|p')
+
+if [ -z "$CURRENT_VERSION" ]; then
+  echo "Error: Failed to determine current version from release URL: $URL"
+  exit 1
+fi
+
+if [ -z "$GITHUB_REPO" ]; then
+  echo "Error: Failed to determine GitHub repository from release URL: $URL"
+  exit 1
+fi
+
 API_RESPONSE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPO/releases/latest")
 LATEST_VERSION=$(echo "$API_RESPONSE" | jq -r '.tag_name' | sed 's/^v//')
 
