@@ -96,6 +96,6 @@
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "64"
+    "stable": "0.12.5"
   }
 }

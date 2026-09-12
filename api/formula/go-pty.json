@@ -44,20 +44,20 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "557d420004b2977daef37f255ffdff68353f8be8fa127261f8a7ae9185c397f4"
+    "sha256": "d3f9dbbfa46668024a07b15b68ca9daa5ec9e6eee5b5f1ab1c348d307e5675bd"
   },
   "ruby_source_path": "Formula/go-pty.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "2e94a9470d8f7cfc98a6208706a373dffe380463",
+  "tap_git_head": "ee591d1e599eb3efc83881af990fff396c2036bb",
   "test_dependencies": [],
   "urls": {
     "stable": {
-      "checksum": "4689b2f9693a65f8ad46544fa9a318cea98fd2c451a527020deb897c232c21ad",
+      "checksum": "d231885fca89256edb4f625c1305ac9e122775b394a1fdd21bb50bcc81f7e4c7",
       "revision": null,
       "tag": null,
-      "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-darwin-arm64",
+      "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-darwin-arm64",
       "using": null
     }
   },
@@ -67,10 +67,10 @@
     "arm64_linux": {
       "urls": {
         "stable": {
-          "checksum": "8a8d4d4470ab1b105e103055a7189f366a5806cfac4b1cf08a35b6e5ce37fe7e",
+          "checksum": "186648fb205992c681c5dc00843a4c36492a08863e5c62fd7dad66628fdbd22c",
           "revision": null,
           "tag": null,
-          "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-linux-arm64",
+          "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-linux-arm64",
           "using": null
         }
       }
@@ -78,10 +78,10 @@
     "x86_64_linux": {
       "urls": {
         "stable": {
-          "checksum": "8a8d4d4470ab1b105e103055a7189f366a5806cfac4b1cf08a35b6e5ce37fe7e",
+          "checksum": "186648fb205992c681c5dc00843a4c36492a08863e5c62fd7dad66628fdbd22c",
           "revision": null,
           "tag": null,
-          "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-linux-arm64",
+          "url": "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-linux-arm64",
           "using": null
         }
       }
@@ -92,6 +92,6 @@
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "64"
+    "stable": "0.3.2"
   }
 }
