@@ -3,21 +3,21 @@ class GoPty < Formula
   homepage "https://github.com/lcmen/go-pty"
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-darwin-arm64"
-      sha256 "4689b2f9693a65f8ad46544fa9a318cea98fd2c451a527020deb897c232c21ad"
+      url "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-darwin-arm64"
+      sha256 "d231885fca89256edb4f625c1305ac9e122775b394a1fdd21bb50bcc81f7e4c7"
     else
-      url "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-darwin-amd64"
-      sha256 "a442bb8e704e2fa42ac54f6ab51d97bc24d36f02b9dd7c6559b00adeacecc66a"
+      url "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-darwin-amd64"
+      sha256 "98ba9b6bf24a33c7d253072db1c62970a7e29ad79a91b12d2409bb527d914950"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-linux-arm64"
-      sha256 "8a8d4d4470ab1b105e103055a7189f366a5806cfac4b1cf08a35b6e5ce37fe7e"
+      url "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-linux-arm64"
+      sha256 "186648fb205992c681c5dc00843a4c36492a08863e5c62fd7dad66628fdbd22c"
     else
-      url "https://github.com/lcmen/go-pty/releases/download/v0.3.1/go-pty-linux-amd64"
-      sha256 "e265b7fdcbfa8b301e24894f20586006faf7161cf512ee625ae5dd6bf1664002"
+      url "https://github.com/lcmen/go-pty/releases/download/v0.3.2/go-pty-linux-amd64"
+      sha256 "34ba1b965c970cefd1ae0b80f7ff1c74d9b4157b473a833db07562c4a3238a72"
     end
   end
 
