@@ -48,20 +48,20 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "0b30846ad7d5020f9fbecd17357013a9c736e330e0d6c9a09d08f151f6cb2fab"
+    "sha256": "859dc50ffef0f03e9af32a1de476916a2582e9e7ee2c00940908e10f477ad05f"
   },
   "ruby_source_path": "Formula/neovim-bin.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "2e94a9470d8f7cfc98a6208706a373dffe380463",
+  "tap_git_head": "35625de59f0d03401e5c056c0ede002ef82eadec",
   "test_dependencies": [],
   "urls": {
     "stable": {
-      "checksum": "65fb000099e47ca1b762584c484cc833f40e30851a0ec450d4174e16317c1f9b",
+      "checksum": "1dbd148222b051ba6c307c4d17a318ed083df018a4f6a5a0ce46955ffc9ab87b",
       "revision": null,
       "tag": null,
-      "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-macos-arm64.tar.gz",
+      "url": "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-macos-arm64.tar.gz",
       "using": null
     }
   },
@@ -71,10 +71,10 @@
     "arm64_linux": {
       "urls": {
         "stable": {
-          "checksum": "1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725",
+          "checksum": "8f1f64a0bdb97247034038c3823c6cbad5bdf9ecd5751b85494b71c3ee04c815",
           "revision": null,
           "tag": null,
-          "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-arm64.tar.gz",
+          "url": "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-arm64.tar.gz",
           "using": null
         }
       }
@@ -82,10 +82,10 @@
     "x86_64_linux": {
       "urls": {
         "stable": {
-          "checksum": "1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725",
+          "checksum": "8f1f64a0bdb97247034038c3823c6cbad5bdf9ecd5751b85494b71c3ee04c815",
           "revision": null,
           "tag": null,
-          "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-arm64.tar.gz",
+          "url": "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-arm64.tar.gz",
           "using": null
         }
       }
@@ -96,6 +96,6 @@
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "0.12.5"
+    "stable": "0.12.6"
   }
 }
