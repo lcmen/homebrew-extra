@@ -1,8 +1,8 @@
 class LibvipsLite < Formula
   desc "Image processing library, stripped down for Rails image variants"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.18.6/vips-8.18.6.tar.xz"
-  sha256 "3c41e1d5458081bfa4a5bc54e116c46259c75c6760a18027764555632b9dda3e"
+  url "https://github.com/libvips/libvips/releases/download/v8.18.7/vips-8.18.7.tar.xz"
+  sha256 "5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94"
 
   depends_on "gettext" => :build
   depends_on "meson" => :build
