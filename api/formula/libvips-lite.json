@@ -1,7 +1,24 @@
 {
   "aliases": [],
   "autobump": true,
-  "bottle": {},
+  "bottle": {
+    "stable": {
+      "files": {
+        "arm64_sequoia": {
+          "cellar": "/opt/homebrew/Cellar",
+          "sha256": "5456a4716f651bdf3ae8ed259dd65d753e5458a03f88eb870e9a2bfedf0436a9",
+          "url": "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.8/libvips-lite-8.18.8.arm64_sequoia.bottle.1.tar.gz"
+        },
+        "sequoia": {
+          "cellar": "/usr/local/Cellar",
+          "sha256": "65e140795df3e17665b21534929a0bdfe337fc98d5f832db2827d5d4ba09eb21",
+          "url": "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.8/libvips-lite-8.18.8.sequoia.bottle.1.tar.gz"
+        }
+      },
+      "rebuild": 1,
+      "root_url": "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.8"
+    }
+  },
   "build_dependencies": [
     "gettext",
     "meson",
@@ -65,13 +82,13 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "2d546f1f8dcedcb7b511c08103cc2415a3d67156b2578e03733f12ba56629d11"
+    "sha256": "5ad6cf0049dc9f4b98c9f04fab9a1107505570ecd4a325b688fb6cb9fec59ff7"
   },
   "ruby_source_path": "Formula/libvips-lite.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "6e514a53f0b4b56a379ae1acb6cc4b43c539303d",
+  "tap_git_head": "6b81b8a4672033a3fe64b3f566ef251f821ffd08",
   "test_dependencies": [
     "pkgconf"
   ],
@@ -125,7 +142,7 @@
   "version_scheme": 0,
   "versioned_formulae": [],
   "versions": {
-    "bottle": false,
+    "bottle": true,
     "head": null,
     "stable": "8.18.8"
   }
