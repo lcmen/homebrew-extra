@@ -48,6 +48,13 @@ jobs:
       - name: Verify runner architecture
         run: test "$(uname -m)" = "${{ matrix.target.arch }}"
 
+      - name: Remove unused HashiCorp tap
+        run: |
+          taps="$(brew tap)"
+          if grep -Fxq hashicorp/tap <<< "$taps"; then
+            brew untap hashicorp/tap
+          fi
+
       - name: Tap repository
         run: brew tap lcmen/extra "$GITHUB_WORKSPACE"
 
