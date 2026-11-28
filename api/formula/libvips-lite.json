@@ -65,22 +65,22 @@
   "requirements": [],
   "revision": 0,
   "ruby_source_checksum": {
-    "sha256": "b9f205bf1450bee15f119371132b061577ffe411a1f484a3a6269ffedccc0c2f"
+    "sha256": "2d546f1f8dcedcb7b511c08103cc2415a3d67156b2578e03733f12ba56629d11"
   },
   "ruby_source_path": "Formula/libvips-lite.rb",
   "service": null,
   "skip_livecheck": false,
   "tap": "lcmen/extra",
-  "tap_git_head": "714da97ae3b492b4f8c8464bd57b75558aedabdb",
+  "tap_git_head": "6e514a53f0b4b56a379ae1acb6cc4b43c539303d",
   "test_dependencies": [
     "pkgconf"
   ],
   "urls": {
     "stable": {
-      "checksum": "5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94",
+      "checksum": "7871fc98498d90879d866b7de46cb52209dc859de7662dd6f596e7b0ff95014b",
       "revision": null,
       "tag": null,
-      "url": "https://github.com/libvips/libvips/releases/download/v8.18.7/vips-8.18.7.tar.xz",
+      "url": "https://github.com/libvips/libvips/releases/download/v8.18.8/vips-8.18.8.tar.xz",
       "using": null
     }
   },
@@ -127,6 +127,6 @@
   "versions": {
     "bottle": false,
     "head": null,
-    "stable": "8.18.7"
+    "stable": "8.18.8"
   }
 }
