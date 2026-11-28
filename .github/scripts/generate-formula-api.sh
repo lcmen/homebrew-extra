@@ -12,11 +12,13 @@ mkdir -p "$OUTPUT_DIR"
 
 for formula_path in Formula/*.rb; do
   name="$(basename "$formula_path" .rb)"
+  formula_ref="${TAP}/${name}"
   output_path="${OUTPUT_DIR}/${name}.json"
   temporary_path="$(mktemp "${TMPDIR:-/tmp}/${name}.json.XXXXXX")"
   tap_git_head="$(git log -1 --format=%H -- "$formula_path")"
 
-  brew info --json=v2 --variations "${TAP}/${name}" |
+  brew trust --formula "$formula_ref"
+  brew info --json=v2 --variations "$formula_ref" |
     jq --exit-status \
       --arg tap_git_head "$tap_git_head" \
       '

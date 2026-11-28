@@ -54,6 +54,7 @@ jobs:
       - name: Set bottle root URL
         id: bottle
         run: |
+          brew trust --formula "lcmen/extra/${{ matrix.package }}"
           pkg_version="$(
             brew info --json=v2 "lcmen/extra/${{ matrix.package }}" |
               jq --raw-output '
