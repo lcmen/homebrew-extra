@@ -4,6 +4,13 @@ class LibvipsLite < Formula
   url "https://github.com/libvips/libvips/releases/download/v8.18.8/vips-8.18.8.tar.xz"
   sha256 "7871fc98498d90879d866b7de46cb52209dc859de7662dd6f596e7b0ff95014b"
 
+  bottle do
+    root_url "https://github.com/lcmen/homebrew-extra/releases/download/libvips-lite-8.18.8"
+    rebuild 1
+    sha256 arm64_sequoia: "5456a4716f651bdf3ae8ed259dd65d753e5458a03f88eb870e9a2bfedf0436a9"
+    sha256 sequoia:       "65e140795df3e17665b21534929a0bdfe337fc98d5f832db2827d5d4ba09eb21"
+  end
+
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
