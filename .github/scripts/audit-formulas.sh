@@ -13,4 +13,5 @@ for formula_path in Formula/*.rb; do
   formulas+=("${TAP}/$(basename "$formula_path" .rb)")
 done
 
+brew trust --formula "${formulas[@]}"
 brew audit --formula --strict "${formulas[@]}"
